@@ -1,0 +1,167 @@
+.mySwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    height: 100%;
+}
+
+.characterImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.charactersModalWrap {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.938);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.slide1 {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.slide2 {
+    position: relative;
+    background-color: #fff;
+}
+
+.modalWrap {
+    display: grid;
+    position: relative;
+    justify-content: center;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-auto-rows: 270px;
+    border: 1px solid lightgray;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    max-width: 1000px;
+    width: 100%;
+    height: 570px;
+    padding: 10px;
+    padding-top: 60px;
+    overflow: auto;
+    gap: 10px;
+}
+
+.paginationWrap {
+    position: absolute;
+    top: 10px;
+}
+
+.character {
+    cursor: pointer;
+    position: relative;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    height: 270px;
+    transition: box-shadow .3s;
+}
+
+.character:active {
+    box-shadow: 0 2px 4px white,
+        /* нижня тінь */
+        0 -2px 4px white,
+        /* верхня тінь */
+        2px 0 4px white,
+        /* права тінь */
+        -2px 0 4px white;
+}
+
+.characterName {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+    width: max-content;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.637);
+    border-radius: 5px;
+}
+
+.closeBtn {
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    top: 15px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid #a9a9a9;
+    border-radius: 100%;
+    transition: background-color .3s;
+}
+
+.selected {
+    position: absolute;    
+    animation: AnimateText .3s forwards;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, .753);
+    border-radius: 8px;
+    color: #fff;
+    padding: 5px 10px;
+    top: 5px;
+    right: 5px;
+}
+
+.goBack {
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+@media(width <= 660px) {
+    .modalWrap {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+}
+
+@media(width <=520px) {
+    .modalWrap {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+    }
+}
+
+@media (hover: hover) {
+    .character:hover {
+        box-shadow: 0 2px 4px white,
+            /* нижня тінь */
+            0 -2px 4px white,
+            /* верхня тінь */
+            2px 0 4px white,
+            /* права тінь */
+            -2px 0 4px white;
+    }
+}
+
+@keyframes AnimateText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

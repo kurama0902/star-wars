@@ -1,0 +1,80 @@
+.mainWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    padding: 10px;
+    gap: 30px;
+}
+
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.leanMore {
+    cursor: pointer;
+    height: 40px;
+    max-width: 300px;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: background .3s;
+    animation: AnimateText .3s forwards;
+    font-size: 18px;
+}
+
+.dart {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+    object-fit: cover;
+    animation: AnimateGif .3s forwards;
+}
+
+.leanMore:active {
+    background-color: rgba(211, 211, 211, 0.247);
+}
+
+.guidebookText {
+    text-align: center;
+    animation: AnimateText .3s forwards;
+}
+
+@media (hover: hover) {
+    .leanMore:hover {
+        background-color: rgba(211, 211, 211, 0.247);
+    }
+}
+
+@keyframes AnimateText {
+    from {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes AnimateGif {
+    from {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
