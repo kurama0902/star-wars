@@ -79,7 +79,7 @@ export const useGetGraph = (person: Person | null) => {
                 ];
 
                 // Define initial edges for the graph
-                const initialEdges = names_f.map((film, index) => ({
+                const initialEdges = names_f.map((_, index) => ({
                     id: `e1-${index + 2}`, // Unique ID for the edge
                     source: '1', // The person node ID
                     target: `${index + 2}`, // The film node ID

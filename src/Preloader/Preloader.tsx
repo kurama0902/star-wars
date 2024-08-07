@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import s from './preloader.module.css'
 
 export const Preloader = () => {

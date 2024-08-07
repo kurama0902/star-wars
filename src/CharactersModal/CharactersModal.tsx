@@ -45,7 +45,7 @@ export const CharactersModal = ({ setIsOpen }: { setIsOpen: React.Dispatch<React
     }
 
     // Handler function for pagination page change
-    const handlePaginationPage = (e: React.ChangeEvent<unknown>, page: number) => {
+    const handlePaginationPage = (page: number) => {
         if (page !== selectedPage && peopleInfo) {
             setPeopleInfo({ people: null, qt: peopleInfo.qt }); // Clear current data before loading new page
             setSelectedPage(page); // Update selected page number
@@ -78,7 +78,7 @@ export const CharactersModal = ({ setIsOpen }: { setIsOpen: React.Dispatch<React
                         </button>
                         <div className={s.paginationWrap}> {/* Wrapper div for pagination */}
                             <Pagination
-                                onChange={handlePaginationPage} // Handler for pagination page changes
+                                onChange={(_, page) => handlePaginationPage(page)} // Handler for pagination page changes
                                 count={peopleInfo?.qt || 0} // Number of pagination pages
                                 color="primary"
                                 sx={{
